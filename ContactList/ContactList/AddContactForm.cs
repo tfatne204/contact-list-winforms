@@ -16,5 +16,27 @@ namespace ContactList
         {
             InitializeComponent();
         }
+    
+
+    private void btnLuu_Click(object sender, EventArgs e)
+        {
+            string hoTen = txtHoTen.Text.Trim();
+            string soDienThoai = txtSoDienThoai.Text.Trim();
+            string email = txtEmail.Text.Trim();
+
+            if (string.IsNullOrEmpty(hoTen) || string.IsNullOrEmpty(soDienThoai))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
+                return;
+            }
+
+            MessageBox.Show($"Đã lưu:\nHọ tên: {hoTen}\nSĐT: {soDienThoai}\nEmail: {email}");
+            this.Close();
+        }
+
+        private void AddContactForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
